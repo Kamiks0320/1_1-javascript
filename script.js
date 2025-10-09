@@ -1,14 +1,23 @@
-(function() {
-  var ex1_button = document.getElementById('ex1_button')
+//Cw1
+function sleep(ms)
+{
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-  function Cw1() {
-    var count = "";
-    for (var i = 0; i < 10; i++) {
-      count += i;
-      count += ", ";
-    }
-    document.getElementById('ex1_content').innerHTML = `${count}`;
+async function countToNine()
+{
+  document.getElementById("ex1_content").textContent = "";
+  document.getElementById("ex1_content").style.color = 'black';
+
+  for(var i = 0; i < 10; i++)
+  {
+    await sleep(1000);
+
+    if(i == 9) 
+      {
+        document.getElementById("ex1_content").textContent += `${i}`;
+        document.getElementById("ex1_content").style.color = 'green';
+      }
+    else document.getElementById("ex1_content").textContent += `${i}, `;
   }
-
-  ex1_button.onclick = Cw1;
-})();
+}
