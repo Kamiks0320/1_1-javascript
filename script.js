@@ -1,3 +1,4 @@
+//kod zawiera pare dodatkow niewymienionych w poleceniu w celu przecwiczenia java-scripta.
 //Cw1
 function sleep(ms)
 {
@@ -21,3 +22,18 @@ async function countToNine()
     else document.getElementById("ex1_content").textContent += `${i}, `;
   }
 }
+
+//Cw2
+const input = document.getElementById("ex2_text");
+const output = document.getElementById("ex2_content");
+
+input.addEventListener("input", (event) =>
+{
+  if(input.value.length != 9) output.textContent = "Długość numeru musi być równa 9";
+  if(input.value.length == 0) output.textContent = "";
+  if(input.value.length == 9) output.textContent = "Numer telefonu jest poprawny.";
+  
+  const a = input.value;
+  if(/[A-Za-z]/.test(a)) output.textContent = "Numer nie może zawierać liter";
+  if(/[^A-Za-z0-9]/.test(a)) output.textContent = "Numer nie może zawierać znaków specjalnych";
+})
