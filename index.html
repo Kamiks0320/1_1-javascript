@@ -25,7 +25,7 @@
     <div id="ex3" class="ex">
       <h5>Ex3 - Drag&Drop</h5>
       <div>
-        <div id="ex3_one">
+        <div id="ex3_one" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
           <div id="ex3_element" draggable="true" ondragstart="dragstartHandler(event)">Content</div>
         </div>
         <div id="ex3_two" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
