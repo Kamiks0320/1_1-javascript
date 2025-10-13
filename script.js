@@ -23,6 +23,7 @@ async function countToNine()
   }
 }
 
+
 //Cw2
 const input = document.getElementById("ex2_text");
 const output = document.getElementById("ex2_content");
@@ -37,3 +38,22 @@ input.addEventListener("input", (event) =>
   if(/[A-Za-z]/.test(a)) output.textContent = "Numer nie może zawierać liter";
   if(/[^A-Za-z0-9]/.test(a)) output.textContent = "Numer nie może zawierać znaków specjalnych";
 })
+
+
+//Cw3
+function dragstartHandler(ev)
+{
+  ev.dataTransfer.setData("text", ev.target.id)
+}
+
+function dragoverHandler(ev)
+{
+  ev.preventDefault();
+}
+
+function dropHandler(ev)
+{
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
