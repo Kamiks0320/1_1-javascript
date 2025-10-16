@@ -57,3 +57,22 @@ function dropHandler(ev)
   const data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
 }
+
+
+//Dodatkowe cwiczenie - Zmień tło
+document.getElementById("drawcolor").addEventListener('click', function() 
+{
+  var checkedboxes = document.getElementsByName('bgcolor');
+  var colors = [];
+  for(var i = 0; i < checkedboxes.length; i++) if(checkedboxes[i].checked) colors.push(checkedboxes[i].value);
+  console.log(colors);
+
+  var randomselectedcolor = Math.floor(Math.random() * colors.length);
+  document.body.style.backgroundColor = colors[randomselectedcolor];
+}
+)
+
+function changeBackgroundColorToDefault()
+{
+  document.body.style.backgroundColor = "aliceblue";
+}
