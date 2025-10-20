@@ -38,6 +38,10 @@ input.addEventListener("input", (event) =>
   const a = input.value;
   if(/[A-Za-z]/.test(a)) output.textContent = "Numer nie może zawierać liter";
   if(/[^A-Za-z0-9]/.test(a)) output.textContent = "Numer nie może zawierać znaków specjalnych";
+
+  if(input.value.length == 0 || input.value.length >= 5) document.getElementById("ex2_noofsymbols").textContent = "Wpisano " + input.value.length + " znaków";
+  else if (input.value.length == 1) document.getElementById("ex2_noofsymbols").textContent = "Wpisano " + input.value.length + " znak";
+  else if (input.value.length >= 2 && input.value.length <= 4) document.getElementById("ex2_noofsymbols").textContent = "Wpisano " + input.value.length + " znaki";
 })
 
 
