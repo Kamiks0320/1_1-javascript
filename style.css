@@ -21,3 +21,16 @@ body {
   background-color: red;
   width: 100px;
 }
+
+#ex6_element
+{
+  background-color: aquamarine;
+  width:100px;
+  display:block;
+  border: 1px solid;
+  border-radius:5px;
+  text-align:center;
+  position:relative;
+  left:0;
+  transition: left 3s ease-in-out;
+}

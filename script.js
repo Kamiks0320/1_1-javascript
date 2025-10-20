@@ -27,6 +27,7 @@ async function countToNine()
 //Cw2
 const input = document.getElementById("ex2_text");
 const output = document.getElementById("ex2_content");
+document.getElementById("ex2_noofsymbols").textContent = "0 znaków";
 
 input.addEventListener("input", (event) =>
 {
@@ -59,18 +60,28 @@ function dropHandler(ev)
 }
 
 
+//Dodatkowe cwiczenie - Animacja elementu
+document.getElementById("ex6_animate_button").addEventListener('click', function()
+{
+  document.getElementById("ex6_element").style.left='94%';
+})
+
+document.getElementById("ex6_element").addEventListener('transitionend', function()
+{
+  document.getElementById("ex6_element").style.left='0%';
+})
+
+
 //Dodatkowe cwiczenie - Zmień tło
-document.getElementById("drawcolor").addEventListener('click', function() 
+document.getElementById("ex4_button").addEventListener('click', function() 
 {
   var checkedboxes = document.getElementsByName('bgcolor');
   var colors = [];
   for(var i = 0; i < checkedboxes.length; i++) if(checkedboxes[i].checked) colors.push(checkedboxes[i].value);
-  console.log(colors);
 
   var randomselectedcolor = Math.floor(Math.random() * colors.length);
   document.body.style.backgroundColor = colors[randomselectedcolor];
-}
-)
+})
 
 function changeBackgroundColorToDefault()
 {
