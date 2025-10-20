@@ -91,3 +91,29 @@ function changeBackgroundColorToDefault()
 {
   document.body.style.backgroundColor = "aliceblue";
 }
+
+//Dodatkowe cwiczenie - Timer
+const timer = document.getElementById("ex6_button");
+var time = 0;
+var running = false;
+var timerid = null;
+
+timer.addEventListener('click', function()
+{
+  if(!running)
+  {
+    running = true;
+    timer.textContent = "Stop";
+    timerid = setInterval(function()
+    {
+      time++;
+      document.getElementById("ex6_content").textContent = time;
+    }, 1000);
+  }
+  else
+  {
+    running = false;
+    clearInterval(timerid);
+    timer.textContent = "Start";
+  }
+})
